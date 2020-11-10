@@ -14,14 +14,21 @@ class _LoadingSampleState extends State<LoadingSample> {
   double centerPosition = 40;
   double rightPosition = 0;
   // double pi = 3.1415926535897932;
+  Timer _timer;
 
   @override
   void initState() {
-    Timer.periodic(
+    super.initState();
+    _timer = new Timer.periodic(
       Duration(seconds: 1),
       _setPosition,
     );
-    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   void _setPosition(Timer timer) {
