@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_playground/loading_sample/loading_sample.dart';
 import 'package:flutter_ui_playground/routing_animation/routing_animation.dart';
+import 'package:flutter_ui_playground/sidebar_sample/sidebar_sample.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => TopPage(),
           '/loading_sample': (context) => LoadingSample(),
           '/routing_animation': (context) => Page1(),
+          '/sidebar_sample': (context) => SidebarSampleScreen(),
         });
   }
 }
@@ -41,6 +43,12 @@ class TopPage extends StatelessWidget {
             child: Text('RoutingAnimation'),
             onPressed: () {
               Navigator.of(context).pushNamed('/routing_animation');
+            },
+          ),
+          FlatButton(
+            child: Text('SidebarSample'),
+            onPressed: () {
+              Navigator.of(context).pushNamed('/sidebar_sample');
             },
           ),
         ],

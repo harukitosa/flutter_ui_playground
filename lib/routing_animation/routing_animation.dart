@@ -49,21 +49,10 @@ class _SquareAnimationState extends State<SquareAnimation> {
   }
 
   void _setPosition(Timer timer) {
-    print(timer.toString());
     setState(() {
-      var rng = new Random();
-      print(rng.nextDouble());
-      var idx = 3;
       for (var i = 0; i < heightArray.length; i++) {
-        // if (i == idx) {
-        //   heightArray[i] = 0;
-        // } else {
         heightArray[i] += 25;
         heightArray[i] %= 100;
-        // }
-        // if (heightArray[i] == 100) {
-        //   idx = i;
-        // }
       }
     });
   }
@@ -120,13 +109,6 @@ class _Box extends StatelessWidget {
               duration: Duration(milliseconds: 1000),
               curve: Curves.ease,
             ),
-            // AnimatedContainer(
-            //   width: 15,
-            //   height: boxLineHeight,
-            //   color: Colors.teal,
-            //   duration: Duration(milliseconds: 1000),
-            //   curve: Curves.fastOutSlowIn,
-            // ),
           ],
         ),
       ),
